@@ -18,6 +18,7 @@ final class BuiltinPlugin implements PluginInterface
     {
         PdoAutoInstrumentation::register($ctx);
         CurlAutoInstrumentation::register($ctx);
+        PdoMySQLAutoInstrumentation::register($ctx);
     }
 
     public function getDescription(): string

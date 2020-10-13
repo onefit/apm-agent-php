@@ -27,7 +27,7 @@ final class PdoAutoInstrumentation
     public static function pdoConstruct(RegistrationContextInterface $ctx): void
     {
         $ctx->interceptCallsToMethod(
-            'PDO',
+            'pdo',
             '__construct',
             function (): InterceptedCallTrackerInterface {
                 return new class implements InterceptedCallTrackerInterface {
@@ -61,7 +61,7 @@ final class PdoAutoInstrumentation
     public static function pdoExec(RegistrationContextInterface $ctx): void
     {
         $ctx->interceptCallsToMethod(
-            'PDO',
+            'pdo',
             'exec',
             function (): InterceptedCallTrackerInterface {
                 return new class implements InterceptedCallTrackerInterface {
